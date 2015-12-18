@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 namespace PhotoPrinter
 {
+    delegate void PictureViewBoxSelectionChangedEventHandler(PictureViewBox sender);
+
     class PictureViewBox : Panel
     {
         #region Data
@@ -26,7 +28,26 @@ namespace PhotoPrinter
             get { return m_filename != null ? Image.FromFile(m_filename) : null; }
         }
 
+        public bool IsSelected
+        {
+            get { return m_isSelected; }
+        }
+
         #endregion Properties
+
+        #region Events
+
+        public event PictureViewBoxSelectionChangedEventHandler SelectionChangeRequested;
+
+        private void OnSelectionChangeRequested()
+        {
+            if (SelectionChangeRequested != null)
+            {
+                SelectionChangeRequested(this);
+            }
+        }
+
+        #endregion Events
 
         #region Constructors
 
@@ -42,7 +63,7 @@ namespace PhotoPrinter
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    this.Select(!m_isSelected);
+                    OnSelectionChangeRequested();
                 }
             });
 
