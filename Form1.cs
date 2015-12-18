@@ -72,24 +72,32 @@ namespace PhotoPrinter
             }
         }
 
-        int index = 0;
+        List<PictureViewBox> m_currentPrintSet;
+        int m_currentPrintSetItem = 0;
 
         private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
-            PictureViewBox picturePreview = (PictureViewBox) m_pictureViewPanel.Controls[index];
-            Image image = picturePreview.Image;
+            if (m_currentPrintSet == null)
+            {
+                m_currentPrintSet = new List<PictureViewBox>(m_pictureViewPanel.GetSelected());
+                m_currentPrintSetItem = 0;
+            }
+
+            PictureViewBox pvb = m_currentPrintSet[m_currentPrintSetItem];
+            Image image = pvb.Image;
             e.Graphics.DrawImage(image, 0, 0);
             image.Dispose();
 
-            index++;
+            m_currentPrintSetItem++;
 
-            if (index < m_currentFilenames.Count)
+            if (m_currentPrintSetItem < m_currentPrintSet.Count)
             {
                 e.HasMorePages = true;
             }
             else
             {
-                index = 0;
+                m_currentPrintSetItem = 0;
+                m_currentPrintSet = null;
                 e.HasMorePages = false;
             }
         }

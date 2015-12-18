@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PhotoPrinter
 {
-    delegate void PictureViewBoxSelectionChangedEventHandler(PictureViewBox sender);
+    public delegate void PictureViewBoxSelectionChangedEventHandler(PictureViewBox sender);
 
-    class PictureViewBox : Panel
+    public class PictureViewBox : Panel
     {
         #region Data
 

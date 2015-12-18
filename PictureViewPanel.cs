@@ -62,6 +62,19 @@ namespace PhotoPrinter
             }
         }
 
+        public IEnumerable<PictureViewBox> GetSelected()
+        {
+            foreach (Control control in this.Controls)
+            {
+                PictureViewBox pvb = (PictureViewBox)control;
+
+                if (pvb.IsSelected)
+                {
+                    yield return pvb;
+                }
+            }
+        }
+
         private void HandlePictureViewBoxSelectionChangeEvent(PictureViewBox pvb)
         {
             if (Control.ModifierKeys == Keys.None || m_lastSelected == null)
