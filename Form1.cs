@@ -102,33 +102,6 @@ namespace PhotoPrinter
             }
         }
 
-        //private void previewPanel_DragEnter(object sender, DragEventArgs e)
-        //{
-        //    if (e.Data.GetDataPresent(typeof(PictureViewBox)))
-        //        e.Effect = DragDropEffects.Move;
-        //    else
-        //        e.Effect = DragDropEffects.None;
-        //}
-
-        //private void previewPanel_DragDrop(object sender, DragEventArgs e)
-        //{
-        //    Control source = (PictureViewBox)e.Data.GetData(typeof(PictureViewBox));
-
-            
-        //    Point mousePosition = m_pictureViewPanel.PointToClient(new Point(e.X, e.Y));
-        //    Control destination = m_pictureViewPanel.GetChildAtPoint(mousePosition);
-
-        //    int indexDestination = m_pictureViewPanel.Controls.IndexOf(destination);
-        //    int indexSource = m_pictureViewPanel.Controls.IndexOf(source);
-
-        //    if (indexSource < indexDestination)
-        //    {
-        //        indexDestination--;
-        //    }
-
-        //    m_pictureViewPanel.Controls.SetChildIndex(source, indexDestination);
-        //}
-
         private void Form1_Load(object sender, EventArgs e)
         {
 

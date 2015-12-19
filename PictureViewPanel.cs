@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,7 +109,7 @@ namespace PhotoPrinter
                 }
                 else if (Control.ModifierKeys.HasFlag(Keys.Control))
                 {
-                    pvb.Select(true);
+                    pvb.Select(!pvb.IsSelected);
                 }
             }
 

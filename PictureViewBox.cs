@@ -147,12 +147,35 @@ namespace PhotoPrinter
             });
         }
 
+        public Font DefaultTextFont = new Font(FontFamily.GenericSerif, 10, FontStyle.Regular);
+
         protected override void OnPaint(PaintEventArgs e)
         {
             if (m_thumbnail != null)
             {
                 e.Graphics.DrawImage(m_thumbnail, 10, 10);
             }
+
+            string displayText = null;
+            SizeF displayTextSize;
+
+            do
+            {
+                if (displayText == null)
+                {
+                    displayText = Path.GetFileName(m_filename);
+                }
+                else
+                {
+                    displayText = String.Concat(displayText.Substring(0, displayText.Length - 4), "...");
+                }
+
+                displayTextSize = e.Graphics.MeasureString(displayText, DefaultTextFont);
+            }
+            while (displayTextSize.Width > this.Width);
+
+            e.Graphics.DrawString(displayText, DefaultTextFont, Brushes.Black, 
+                new PointF((this.Width - displayTextSize.Width)/2, this.Height - displayTextSize.Height));
 
             base.OnPaint(e);
         }
