@@ -19,6 +19,8 @@ namespace PhotoPrinter
         private Image m_thumbnail;
         private bool m_isSelected;
 
+        public Font DefaultTextFont { get; private set; }
+
         #endregion Data
 
         #region Properties
@@ -53,6 +55,8 @@ namespace PhotoPrinter
 
         private PictureViewBox()
         {
+            DefaultTextFont = new Font(FontFamily.GenericSerif, 10, FontStyle.Regular);
+
             m_isSelected = false;
 
             this.Size = new Size(170, 170);
@@ -147,7 +151,14 @@ namespace PhotoPrinter
             });
         }
 
-        public Font DefaultTextFont = new Font(FontFamily.GenericSerif, 10, FontStyle.Regular);
+        #region Image edition
+
+        public bool AutoCrop()
+        {
+            return true;
+        }
+        
+        #endregion Image edition
 
         protected override void OnPaint(PaintEventArgs e)
         {

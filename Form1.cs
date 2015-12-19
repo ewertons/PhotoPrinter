@@ -24,7 +24,8 @@ namespace PhotoPrinter
             m_pictureViewPanel = new PictureViewPanel();
             m_pictureViewPanel.Dock = DockStyle.Fill;
             m_pictureViewPanel.BackColor = Color.White;
-            splitContainer1.Panel2.Controls.Add(m_pictureViewPanel);
+            this.Controls.Add(m_pictureViewPanel);
+            m_pictureViewPanel.BringToFront();
         }
 
         private void loadPicturesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +39,6 @@ namespace PhotoPrinter
                 foreach (string filename in dialog.FileNames)
                 {
                     m_currentFilenames.Add(filename);
-                    filenameListBox.Nodes.Add(Path.GetFileName(filename));
 
                     if (m_pictureViewPanel.Add(filename))
                     {
