@@ -122,5 +122,20 @@ namespace PhotoPrinter
                 pvb.RotateFlip(RotateFlipType.Rotate270FlipNone);
             }
         }
+
+        private void allToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_pictureViewPanel.Select(PictureSelectionMode.All);
+        }
+
+        private void inverseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_pictureViewPanel.Select(PictureSelectionMode.Inverse);
+        }
+
+        private void noneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_pictureViewPanel.Select(PictureSelectionMode.None);
+        }
     }
 }
