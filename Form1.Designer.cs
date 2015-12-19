@@ -37,6 +37,9 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.filenameListBox = new System.Windows.Forms.TreeView();
+            this.rotateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leftToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -51,7 +54,7 @@
             this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1529, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1529, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,20 +97,22 @@
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rotateToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 36);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 38);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 40);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 42);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.filenameListBox);
-            this.splitContainer1.Size = new System.Drawing.Size(1529, 831);
+            this.splitContainer1.Size = new System.Drawing.Size(1529, 829);
             this.splitContainer1.SplitterDistance = 509;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -117,8 +122,31 @@
             this.filenameListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filenameListBox.Location = new System.Drawing.Point(0, 0);
             this.filenameListBox.Name = "filenameListBox";
-            this.filenameListBox.Size = new System.Drawing.Size(509, 831);
+            this.filenameListBox.Size = new System.Drawing.Size(509, 829);
             this.filenameListBox.TabIndex = 4;
+            // 
+            // rotateToolStripMenuItem
+            // 
+            this.rotateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.leftToolStripMenuItem,
+            this.leftToolStripMenuItem1});
+            this.rotateToolStripMenuItem.Name = "rotateToolStripMenuItem";
+            this.rotateToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.rotateToolStripMenuItem.Text = "Rotate";
+            // 
+            // leftToolStripMenuItem
+            // 
+            this.leftToolStripMenuItem.Name = "leftToolStripMenuItem";
+            this.leftToolStripMenuItem.Size = new System.Drawing.Size(269, 38);
+            this.leftToolStripMenuItem.Text = "Right";
+            this.leftToolStripMenuItem.Click += new System.EventHandler(this.leftToolStripMenuItem_Click);
+            // 
+            // leftToolStripMenuItem1
+            // 
+            this.leftToolStripMenuItem1.Name = "leftToolStripMenuItem1";
+            this.leftToolStripMenuItem1.Size = new System.Drawing.Size(269, 38);
+            this.leftToolStripMenuItem1.Text = "Left";
+            this.leftToolStripMenuItem1.Click += new System.EventHandler(this.leftToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -152,6 +180,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView filenameListBox;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rotateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem leftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem leftToolStripMenuItem1;
     }
 }
 

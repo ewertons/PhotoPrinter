@@ -106,5 +106,21 @@ namespace PhotoPrinter
         {
 
         }
+
+        private void leftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var pvb in m_pictureViewPanel.GetSelected())
+            {
+                pvb.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            }
+        }
+
+        private void leftToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            foreach (var pvb in m_pictureViewPanel.GetSelected())
+            {
+                pvb.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            }
+        }
     }
 }
